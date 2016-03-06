@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_FEEDS=/etc/opkg/base-feeds.conf
+BASE_FEEDS="/etc/opkg/base-feeds.conf"
 
 echo "src/gz all http://repo.opkg.net/edison/repo/all" >> "$BASE_FEEDS"
 echo "src/gz edison http://repo.opkg.net/edison/repo/edison" >> "$BASE_FEEDS"
