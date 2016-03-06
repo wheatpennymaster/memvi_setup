@@ -18,8 +18,9 @@ install -g sparkfunadc/
 
 #setup FFMPEG
 echo "Please plug in camera"
+NOTHING=``
 OUTPUT=`lsusb`
-while [ -n "$OUTPUT" ]
+while [ "$NOTHING" == "$OUTPUT" ]
 do
 	echo "not connected..."
 	sleep 5
