@@ -18,15 +18,17 @@ install -g sparkfunadc/
 
 #setup FFMPEG
 echo "Please plug in camera"
-$LSUSB = lsusb
-if [ -n "$LSUSB" ]; then
+OUTPUT=`lsusb`
+while [ -n "$OUTPUT" ]
+do
 	echo "not connected..."
-	sleep 5000
-fi
+	sleep 5
+done
 $DEV_VIDEO_s = "/dev/video0"
-$DEV_VIDEO_e = /dev/video0
-if [ -eq $DEV_VIDEO_s $DEV_VIDEO_e ]
-	
+DEV_VIDEO_e=`/dev/video0`
+if [ "$DEV_VIDEO_s" != "$DEV_VIDEO_e" ]
+	echo "DEV0 error"
+	exit
 fi
 git clone https://github.com/drejkim/edi-cam.git
 /home/root/edi-cam/bin/install_ffmpeg.sh
