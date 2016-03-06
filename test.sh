@@ -1,9 +1,5 @@
 #!/bin/bash
 
-NOTHING=``
-OUTPUT=`ls d/`
-while [ "$NOTHING" == "$OUTPUT" ]
-do
-        echo "not connected..."
-        sleep 5
-done
+BASE_FEEDS="hi.txt"
+
+echo "$BASE_FEEDS" >> "hi"

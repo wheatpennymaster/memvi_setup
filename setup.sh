@@ -1,10 +1,10 @@
 #!/bin/bash
 
-$BASE_FEEDS=/etc/opkg/base-feeds.conf
+BASE_FEEDS=/etc/opkg/base-feeds.conf
 
-echo "$BASE_FEEDS" >> "src/gz all http://repo.opkg.net/edison/repo/all"
-echo "$BASE_FEEDS" >> "src/gz edison http://repo.opkg.net/edison/repo/edison"
-echo "$BASE_FEEDS" >> "src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32"
+echo "src/gz all http://repo.opkg.net/edison/repo/all" >> "$BASE_FEEDS"
+echo "src/gz edison http://repo.opkg.net/edison/repo/edison" >> "$BASE_FEEDS"
+echo "src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32" >> "$BASE_FEEDS"
 
 opkg update
 opkg install git
@@ -25,9 +25,9 @@ do
 	echo "not connected..."
 	sleep 5
 done
-$DEV_VIDEO_s = "/dev/video0"
+DEV_VIDEO_s="dev/video0"
 DEV_VIDEO_e=`/dev/video0`
-if [ "$DEV_VIDEO_s" != "$DEV_VIDEO_e" ]
+if [ "$DEV_VIDEO_s" != "$DEV_VIDEO_e" ]; then
 	echo "DEV0 error"
 	exit
 fi
